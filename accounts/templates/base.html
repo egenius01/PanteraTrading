@@ -1,0 +1,42 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> Pantera Trading </title>
+  {%block styles%}
+  <link rel="icon" href="{%static 'assets/img/logo-dark.svg'%}" type="image/x-icon">
+  <link rel="stylesheet" href="{%static 'assets/css/style.css'%}">
+  <link rel="stylesheet" href="{%static 'assets/css/ionicons.min.css'%}">
+
+  {%endblock%}
+
+</head>
+
+<body>
+{%block nav%}
+{%include 'header.html'%}
+{%endblock%}
+{%block content%}
+
+{%endblock%}
+{%block scripts%}
+  <script src="{%static 'assets/js/jquery-3.4.1.min.js'%}"></script>
+  <script src="{%static 'assets/js/popper.min.js'%}"></script>
+  <script src="{%static 'assets/js/bootstrap.min.js'%}"></script>
+  <script src="{%static 'assets/js/amcharts-core.min.js'%}"></script>
+  <script src="{%static 'assets/js/amcharts.min.js'%}"></script>
+  <script src="{%static 'assets/js/jquery.mCustomScrollbar.js'%}"></script>
+  <script src="{%static 'assets/js/custom.js'%}"></script>
+{%endblock%}
+  <script>
+    $('tbody, .market-news ul').mCustomScrollbar({
+      theme: 'minimal',
+    });
+  </script>
+</body>
+
+</html>

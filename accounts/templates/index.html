@@ -1,0 +1,269 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block content%}
+<div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script src="https://s3.tradingview.com/external-embedding/embed-widget-tickers.js" async>
+            {
+              "colorTheme": "dark"
+            }
+          </script>
+        </div>
+<div class="landing-hero">
+
+    <div class="container">
+      <div class="row">
+        <div class="offset-md-2 col-md-8 text-center">
+
+            <h2>Pantera, <small> The most trusted and secure trade broker.</small></h2>
+          <p>Pantera trading network Limited is a private limited
+              liability company Incorporated in the United Kingdom as a broker
+              that mediate on behalf of beginners and experts alike in Crypto and Forex
+              market. Why do you stress yourself trading when we can trade for you?
+              Lets be your broker and we promise you won’t break a sweat before you earn.</p>
+          <div class="float-center">
+              <a href="{%url 'signup'%}" class="btn btn-primary" type="button" >Get Started</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid no-fluid">
+    <div class="row sm-gutters">
+      <div class="col-md-12 mb15">
+        <!-- TradingView Widget BEGIN -->
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js"
+            async>
+              {
+                "symbols": [
+                  {
+                    "description": "",
+                    "proName": "BINANCE:SOLUSDT"
+                  },
+                  {
+                    "description": "",
+                    "proName": "BINANCE:BTCUSDT"
+                  },
+                  {
+                    "description": "",
+                    "proName": "BINANCE:GRTUSDT"
+                  },
+                  {
+                    "description": "",
+                    "proName": "BINANCE:BNBUSDT"
+                  },
+                  {
+                    "description": "",
+                    "proName": "BINANCE:AXSUSDT"
+                  },
+                  {
+                    "description": "",
+                    "proName": "BITFINEX:BTCUSD"
+                  },
+                  {
+                    "description": "",
+                    "proName": "BINANCE:DOTUSDT"
+                  },
+                  {
+                    "description": "",
+                    "proName": "BINANCE:ICPUSDT"
+                  }
+                ],
+                  "showSymbolLogo": true,
+                    "displayMode": "compact",
+                      "locale": "en"
+              }
+            </script>
+        </div>
+        <!-- TradingView Widget END -->
+      </div>
+    </div>
+  </div>
+<div class="landing-feature landing-start">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Get started in a few steps</h2>
+        </div>
+        <div class="col-md-4">
+          <div class="landing-feature-item">
+              <img src='{% static "assets/img/landing/user.svg"%}' alt="">
+            <span>1</span>
+            <h2 class="text-center">Choose a suitable Investment Plan</h2>
+            <p>Select any of the Investment Plans you wish to start with.
+                    You can always further Invest under any of the Plans
+                      from your account when you have signed up.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="landing-feature-item">
+            <img src='{% static "assets/img/landing/trade.svg"%}' alt="">
+            <span>2</span>
+            <h2 class="text-center">Sign Up for an Investment Account</h2>
+            <p>Having selected an Investment Plan, choose how
+                  much you wish to invest, how you wish to fund it and
+                  preferred ROI model; then fill out a very simple form
+                  to sign up for an Investment Account.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="landing-feature-item">
+              <img src='{% static "assets/img/landing/bank.svg"%}' alt="">
+            <span>3</span>
+            <h2 class="text-center">Fund your New Investment</h2>
+            <p>Then, fund your Investment through any of the
+                  available mediums, mostly Digital Currencies (BTC,
+                  ETH, LTC, etc.) for ease of global payment when
+                  funding investments and when receiving your
+                  payouts.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="landing-feature-item">
+              <img src='{% static "assets/img/landing/managment.svg"%}' alt="">
+            <span>5</span>
+            <h2 class="text-center">We Trade and Invest Strategically With your Funds.</h2>
+            <p> Select any of the Investment Plans you wish to start with.
+              You can always further Invest under any of the Plans from your account when you have signed up.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="landing-feature-item">
+            <img src='{% static "assets/img/landing/trade.svg"%}' alt="">
+            <span>6</span>
+            <h2 class="text-center">You can Request Payout or Re-invest Your Returns</h2>
+            <p>Anytime, you can request your earned interests (ROI)
+                  for payout directly into your provided Account or
+                  Digital Wallet (for ease of global payment). You may
+                  also put them back at work by re-investment</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="landing-feature">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Here are a few reasons why <br> you should choose Pantera</h2>
+        </div>
+        <div class="col-md-3">
+          <div class="landing-feature-item">
+            <img src="{%static 'assets/img/landing/stroge.svg'%}" alt="">
+            <h3>SECURE STORAGE</h3>
+            <p>
+              When we say your investments are safe, it is truly secured. We
+              have powerful cryptocurrency security system. In Pantera
+              Trade, every digital asset in our system is encrypted from end-
+              to-end.
+              </p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="landing-feature-item">
+            <img src="{%static 'assets/img/landing/backup.svg'%}" alt="">
+            <h3>PROTECTED BY INSURANCE</h3>
+            <p>
+              Cryptocurrency stored on our servers is covered by our
+              insurance policy. Your investments are indemnified.
+              </p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="landing-feature-item">
+            <img src="{%static 'assets/img/landing/trade.svg'%}" alt="">
+            <h3>GLOBAL EXPERTISE</h3>
+            <p>
+              Pantera Trade Network has one of the finest tech brains in
+              digital industry. Some of them have worked with global tech
+              giants like Google, PayPal, and Coinbase.
+              </p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="landing-feature-item">
+            <img src="{%static 'assets/img/landing/managment.svg'%}"  alt="">
+            <h3>TRUE FINANCIAL FREEDOM</h3>
+            <p>
+               In Pantera Trade Network your financial future is assured. Earn the
+              highest ROI daily and weekly for a lifetime, so long as
+              cryptocurrency continues to exist.
+              </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="landing-number">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h2>$657B</h2>
+          <p>Quarterly volume traded</p>
+        </div>
+        <div class="col-md-4">
+          <h2>100+</h2>
+          <p>Countries supported
+          </p>
+        </div>
+        <div class="col-md-4">
+          <h2>56+M</h2>
+          <p>Verified users
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="landing-sub">
+    <div class="container">
+      <div class="row">
+        <div class="offset-md-1 col-md-10">
+          <div class="landing-sub-content">
+            <h2>Become part of a global community of people who have found their path to the crypto world with Pantera
+            </h2>
+            <a href="{%url 'signup'%}">Get Started</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="landing-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <a href="landing-page-light.html">
+            <img src="{%static 'assets/img/logo-dark.svg'%}" alt="">
+          </a>
+        </div>
+        <div class="col-md-10 d-flex justify-content-end align-items-center">
+          <ul>
+            <li><a href="exchange-light.html">Exchange</a></li>
+            <li><a href="markets-light.html">Market</a></li>
+            <li><a href="settings-profile-light.html">Profile</a></li>
+            <li><a href="settings-wallet-light.html">Wallet</a></li>
+            <li><a href="settings-light.html">Settings</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+{%endblock%}

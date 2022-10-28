@@ -1,0 +1,89 @@
+{%extends 'base2.html'%}
+{%load static%}
+
+{%block content%}
+<div class="page-header">
+      <h3 class="page-title">
+        <span class="page-title-icon bg-gradient-primary text-white me-2">
+          <i class="mdi mdi-chart-areaspline"></i>
+        </span> Request Payout
+      </h3>
+</div>
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Payout Request</h4>
+        <p class="card-description">Fill the form to complete the request, track requests on the table below.</p>
+        <form method="post" action="" class="forms-sample">
+                {%csrf_token%}
+        <div class="form-group">
+           Investment:
+            {{form.investments}}
+        </div>
+                <div class="form-group">
+                    {{form.amount.label}} <small>(Request)</small>:
+                    {{form.amount}}
+                </div>
+
+                <div class="form-group">
+                    {{form.payment_mode.label}}:
+                    {{form.payment_mode}}
+                </div>
+                <button type="submit" class="btn btn-sm btn-gradient-primary me-2">Add</button>
+            </form>
+        </div>
+  </div>
+    </div>
+<div class="row  ">
+<div class="card">
+
+                  <div class="card-body">
+                    <h4 class="card-title">Total Transactions</h4>
+
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th> Paid Via </th>
+                          <th> Withdraw Amount </th>
+                          <th> Invest </th>
+                          <th> status(optional) </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      {% for object in object_list %}
+                      <tr>
+                          <td> {{object.payment_mode}} </td>
+                          <td> ${{object.amount}} </td>
+                          <td> {{object.investments.deposit}} </td>
+                          <td> {{object.status}} </td>
+
+                          <td></td>
+                        </tr>
+                          {%endfor%}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+    </div>
+
+{%endblock content%}
+
+{%block side%}
+    <li class="nav-item sidebar-actions">
+      <span class="nav-link">
+        <div class="border-bottom">
+          <h6 class="font-weight-normal mb-3">Investments</h6>
+        </div>
+        <a href="{%url 'add-investment'%}"><button class="btn btn-block btn-lg btn-gradient-primary mt-4"> Add Investment</button></a>
+        <div class="mt-4">
+          <div class="border-bottom">
+            <p class="text-secondary">  </p>
+          </div>
+          <ul class="gradient-bullet-list mt-4">
+              <h5>Total Investments</h5>
+            <li>{{object_list|length}} Investments</li>
+          </ul>
+        </div>
+      </span>
+    </li>
+{%endblock side%}

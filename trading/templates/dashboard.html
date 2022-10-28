@@ -1,0 +1,145 @@
+{%extends "base2.html"%}
+{%load static%}
+
+{%block content%}
+            <div class="page-header">
+              <h3 class="page-title">
+                <span class="page-title-icon bg-gradient-primary text-white me-2">
+                  <i class="mdi mdi-home"></i>
+                </span> Dashboard
+              </h3>
+              <nav aria-label="breadcrumb">
+                <ul class="breadcrumb">
+                  <li class="breadcrumb-item active" aria-current="page">
+                    <span></span>Overview <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle"></i>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <div class="row">
+              <div class="col-md-4 stretch-card grid-margin">
+                <div class="card bg-gradient-danger card-img-holder text-white">
+                  <div class="card-body">
+                    <img src="{%static 'assets2/images/dashboard/circle.svg'%}" class="card-img-absolute" alt="circle-image" />
+                    <h4 class="font-weight-normal mb-3">Initial Balance <i class="mdi mdi-bookmark-outline mdi-24px float-right"></i>
+                    </h4>
+                    <h2 class="mb-5">$ {{user.initial_balance}}</h2>
+                    <h6 class="card-text">Total Deposits</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 stretch-card grid-margin">
+                <div class="card bg-gradient-info card-img-holder text-white">
+                  <div class="card-body">
+                    <img src="{%static 'assets2/images/dashboard/circle.svg'%}" class="card-img-absolute" alt="circle-image" />
+                    <h4 class="font-weight-normal mb-3">Current Balance <i class="mdi mdi-chart-line mdi-24px float-right"></i>
+                    </h4>
+                    <h2 class="mb-5">$ {{current_balance}}</h2>
+<!--                    <h6 class="card-text">Increased by 10%</h6>-->
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 stretch-card grid-margin">
+                <div class="card bg-gradient-success card-img-holder text-white">
+                  <div class="card-body">
+                    <img src="{%static 'assets2/images/dashboard/circle.svg'%}" class="card-img-absolute" alt="circle-image" />
+                    <h4 class="font-weight-normal mb-3">Total Referrals <i class="mdi mdi-diamond mdi-24px float-right"></i>
+                    </h4>
+                    <h2 class="mb-5">{{ref_count}} Users</h2>
+<!--                    <h6 class="card-text">Increased by 5%</h6>-->
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4 stretch-card grid-margin">
+                <div class="card bg-gradient-danger card-img-holder text-white">
+                  <div class="card-body">
+                    <img src="{%static 'assets2/images/dashboard/circle.svg'%}" class="card-img-absolute" alt="circle-image" />
+                    <h4 class="font-weight-normal mb-3">Total Referral Earnings <i class="mdi mdi-bookmark-outline mdi-24px float-right"></i>
+                    </h4>
+                    <h2 class="mb-5">$ {{total_ref}}</h2>
+                    <h6 class="card-text">Referral Code- {{user.code}}</h6>
+                  </div>
+                </div>
+              </div>
+
+               <div class="col-md-4 stretch-card grid-margin">
+                <div class="card bg-gradient-danger card-img-holder text-white">
+                  <div class="card-body">
+                    <img src="{%static 'assets2/images/dashboard/circle.svg'%}" class="card-img-absolute" alt="circle-image" />
+                    <h4 class="font-weight-normal mb-3">Withdrawal Requests<i class="mdi mdi-bookmark-outline mdi-24px float-right"></i>
+                    </h4>
+                    <h2 class="mb-5">{{with_num}} </h2>
+                    <h6 class="card-text">Approved Request(s)</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-7 grid-margin stretch-card">
+                <div class="card p-2">
+              <h4 class="card-title">Live Exchange Tracker</h4>
+                  <!-- TradingView Widget BEGIN -->
+                <div class="tradingview-widget-container">
+                <div class="tradingview-widget-container__widget"></div>
+                <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/markets/currencies/forex-cross-rates/" rel="noopener" target="_blank"><span class="blue-text">Exchange Rates</span></a> by Pantera</div>
+                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-forex-cross-rates.js" async>
+                {
+                "width": "100%",
+                "height": "100%",
+                "currencies": [
+                  "EUR",
+                  "USD",
+                  "JPY",
+                  "GBP",
+                  "CHF",
+                  "AUD",
+                  "CAD",
+                  "NZD",
+                  "CNY"
+                ],
+                "isTransparent": true,
+                "colorTheme": "light",
+                "locale": "en"
+              }
+  </script>
+</div>
+<!-- TradingView Widget END -->
+                </div>
+              </div>
+              <div class="col-md-5 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">EUR/USD</h4>
+                    <!-- TradingView Widget BEGIN -->
+                    <div class="tradingview-widget-container">
+                      <div class="tradingview-widget-container__widget"></div>
+                      <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/EURUSD/?exchange=FX" rel="noopener" target="_blank"><span class="blue-text">EURUSD Rates</span></a> by Pantera</div>
+                      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+                      {
+                      "symbol": "FX:EURUSD",
+                      "width": "100%",
+                      "height": "100%",
+                      "locale": "en",
+                      "dateRange": "12M",
+                      "colorTheme": "light",
+                      "trendLineColor": "rgba(41, 98, 255, 1)",
+                      "underLineColor": "rgba(41, 98, 255, 0.3)",
+                      "underLineBottomColor": "rgba(41, 98, 255, 0)",
+                      "isTransparent": true,
+                      "autosize": true,
+                      "largeChartUrl": ""
+                    }
+                      </script>
+                    </div>
+                    <!-- TradingView Widget END -->
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+{%endblock content%}

@@ -1,0 +1,64 @@
+{%extends 'base2.html'%}
+{%load static%}
+
+{%block content%}
+<div class="page-header">
+      <h3 class="page-title">
+        <span class="page-title-icon bg-gradient-primary text-white me-2">
+          <i class="mdi mdi-chart-areaspline"></i>
+        </span> Investments
+      </h3>
+</div>
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+    <div class="card-body">
+        <h4 class="card-title">New</h4>
+        <p class="card-description">Add Investment</p>
+        <form method="post" action="#" class="forms-sample">
+            {%csrf_token%}
+            <div class="form-group">
+                {{form.investment.label}}:
+                {{form.investment}}
+            </div>
+            <div class="form-group">
+                {{form.deposit.label}} Amount <small>(Request)</small>:
+                {{form.deposit}}
+            </div>
+            <div class="form-group">
+                {{form.payment_mode.label}}:
+                {{form.payment_mode}}
+            </div>
+          <button type="submit" class="btn btn-sm btn-gradient-primary me-2">Add</button>
+        </form>
+  </div>
+    </div>
+</div>
+<div class="row  ">
+    {% for object in object_list%}
+        <div class="col-md-3 stretch-card grid-margin">
+        <div class="card  card-img-holder bg-gradient-dark text-white">
+          <div class="card-body py-2 p-3">
+            <h4 class="font-weight-normal mb-3"> {{object.plan_name}} <i class="mdi mdi-chart-line mdi-24px float-right"></i>
+            </h4>
+              <ul class="list-star ">
+                      <li class="mb-2">minimum_investment: {{object.minimum_investment}}</li>
+                      <li class="mb-2">maximum_investment: {{object.maximum_investment}}</li>
+                      <li class="mb-2">profit:{{object.profit}}</li>
+                      <li class="mb-2">duration: {{object.duration}}</li>
+                      <li class="mb-2">referral: {{object.referral}}</li>
+                      <li class="mb-2">capital_return: {%if object.capital_return ==  True%} <i class="mdi mdi-checkbox-marked-circle-outline"></i>  {%endif%}</li>
+                      <li class="mb-2">instant_withdrawal:{%if object.instant_withdrawal ==  True%} <i class="mdi mdi-checkbox-marked-circle-outline"></i> {%endif%}</li>
+              </ul>
+          </div>
+            <div class="card-footer d-flex justify-content-center">
+<button type="button" class="btn btn-primary btn-icon-text">
+                            <i class="mdi mdi-chart-areaspline  btn-icon-prepend"></i> Invest </button></div>
+
+        </div>
+    </div>
+    {%endfor%}
+    </div>
+
+
+
+{%endblock content%}

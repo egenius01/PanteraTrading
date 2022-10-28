@@ -1,0 +1,46 @@
+{%extends 'base2.html'%}
+{%load static%}
+{%block content%}
+        <div class="row">
+              <div class="col-md-4 stretch-card grid-margin">
+                <div class="card bg-gradient-danger card-img-holder text-white">
+                  <div class="card-body">
+                    <img src="{%static 'assets2/images/dashboard/circle.svg'%}" class="card-img-absolute" alt="circle-image" />
+                    <h4 class="font-weight-normal mb-3">Total Referral Earnings <i class="mdi mdi-bookmark-outline mdi-24px float-right"></i>
+                    </h4>
+                    <h2 class="mb-5">$ {{total_referrals}}</h2>
+                    <h6 class="card-text">Referral Code- {{user.code}}</h6>
+                  </div>
+                </div>
+              </div>
+        </div>
+    <div class="card">
+
+                  <div class="card-body">
+                    <h4 class="card-title">{{user.username}}'s Approved Investments</h4>
+
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th> Referee </th>
+                          <th> Initial Deposit </th>
+                          <th> Your Earnings </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      {%if ref%}
+                      {% for ref in object_list|dictsort:"created" %}
+                      <tr>
+                          <td> {{ref.get_full_name}} </td>
+                          <td> ${{ref.initial_balance}} </td>
+                          <td> ${{ref.referral_earning}} </td>
+
+                          <td></td>
+                        </tr>
+                          {%endfor%}
+                      {%endif%}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+{%endblock content%}
