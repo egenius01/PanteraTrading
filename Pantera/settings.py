@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY','random string')
 DEBUG = False
 # DEBUG = os.environ.get('DEBUG', True)
 
-ALLOWED_HOSTS = ['localhost', 'pantera.pythonanywhere.com']
+ALLOWED_HOSTS = ['localhost', '']
 
 
 # Application definition
