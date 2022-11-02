@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView, CreateView, ListView
 from accounts.models import Investment, UserInvestment, CustomUser, Withdrawals
+from django.contrib.auth.decorators import  login_required
+from django.contrib.auth.mixins import  LoginRequiredMixin
 
-
+@login_required
 def dashboard(request):
     investment = UserInvestment.objects.filter(user=request.user)
     template_name = 'dashboard.html'
@@ -31,7 +33,7 @@ def dashboard(request):
     return render(request, template_name, context)
 
 
-class UserInvestmentsView(CreateView):
+class UserInvestmentsView(LoginRequiredMixin, CreateView):
     model = UserInvestment
     fields = ['investment', 'deposit', 'payment_mode']
 
@@ -44,7 +46,7 @@ class UserInvestmentsView(CreateView):
         return super(UserInvestmentsView, self).get_context_data(**kwargs)
 
 
-class WithdrawalRequestView(CreateView):
+class WithdrawalRequestView(LoginRequiredMixin, CreateView):
     model = Withdrawals
     fields = ['investments', 'payment_mode', 'amount']
 
@@ -57,7 +59,7 @@ class WithdrawalRequestView(CreateView):
         print(kwargs['object_list'])
         return super(WithdrawalRequestView, self).get_context_data(**kwargs)
 
-
+@login_required
 def referral_view(request):
     profile = CustomUser.objects.get(username=request.user.username)
     referrals = profile.get_recommended_profiles()
@@ -73,7 +75,7 @@ def referral_view(request):
     return render(request, 'accounts/refferals_list.html', context)
 
 
-class TrackInvestmentView(ListView):
+class TrackInvestmentView(LoginRequiredMixin, ListView):
     model = UserInvestment
 
 
