@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'random string')
 DEBUG = True
 # DEBUG = os.environ.get('DEBUG', True)
 
-ALLOWED_HOSTS = ['web-production-a77e.up.railway.app/']
+ALLOWED_HOSTS = ['web-production-a77e.up.railway.app']
 
 # Application definition
 
@@ -138,7 +138,7 @@ CSRF_COOKIE_SECURE = True
 
 ## For example, for a site URL is at 'web-production-3640.up.railway.app'
 ## (replace the string below with your own site URL):
-CSRF_TRUSTED_ORIGINS = ['web-production-a77e.up.railway.app/']
+CSRF_TRUSTED_ORIGINS = ['web-production-a77e.up.railway.app']
 
 # During development/for this tutorial you can instead set just the base URL
 # CSRF_TRUSTED_ORIGINS = ['https://*.railway.app']
