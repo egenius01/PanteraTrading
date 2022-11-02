@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'random string')
 DEBUG = False
 # DEBUG = os.environ.get('DEBUG', True)
 
-ALLOWED_HOSTS = ['localhost', 'https://web-production-774e.up.railway.app/']
+ALLOWED_HOSTS = ['localhost', 'https://web-production-a77e.up.railway.app/']
 
 # Application definition
 
@@ -40,12 +40,12 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-
     'django.contrib.staticfiles',
     'accounts',
     'trading',
 
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
