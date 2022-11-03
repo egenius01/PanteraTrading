@@ -24,11 +24,7 @@ class CustomUserCreationForm(UserCreationForm):
             "class": "form-control",
             "placeholder": "E-mail"
         })
-        self.fields['code'].widget.attrs.update({
-            "type": "text",
-            "class": "form-control",
-            "placeholder": "Referral"
-        })
+
         self.fields['username'].widget.attrs.update({
             "type": "text",
             "class": "form-control",
@@ -52,7 +48,7 @@ class CustomUserCreationForm(UserCreationForm):
 
     class Meta:
         model = CustomUser
-        fields = ["first_name","code","last_name","username","email", "address"]
+        fields = ["first_name","last_name","username","email", "address"]
 
 
 class CustomUserChangeForm(UserChangeForm):
