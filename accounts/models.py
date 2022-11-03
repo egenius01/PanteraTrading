@@ -93,3 +93,8 @@ class Withdrawals(models.Model):
 
     def get_absolute_url(self):
         return reverse('withdrawals')
+
+class FAQ(models.Model):
+    question = models.CharField(max_length=200)
+    answer = models.TextField()
+    asked = models.DateTimeField(auto_now_add=True)
