@@ -3,7 +3,7 @@ from django.contrib.auth.admin import UserAdmin
 # Register your models here.
 
 from .forms import CustomUserCreationForm, CustomUserChangeForm
-from .models import CustomUser, Investment, UserInvestment, Withdrawals
+from .models import CustomUser, Investment, UserInvestment, Withdrawals, FAQ
 
 
 class CustomUserAdmin(UserAdmin):
@@ -27,3 +27,4 @@ admin.site.register(CustomUser, CustomUserAdmin)
 admin.site.register(Investment)
 admin.site.register(UserInvestment)
 admin.site.register(Withdrawals)
+admin.site.register(FAQ)
