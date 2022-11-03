@@ -132,7 +132,7 @@
               <a class="nav-link" aria-current="page" href="#intro">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://www.youtube.com/channel/UC5CF7mLQZhvx8O5GODZAhdA" rel="nofollow"
+              <a class="nav-link" href="{%url 'about'%}" rel="nofollow"
                 target="_blank">About</a>
             </li>
             <li class="nav-item">
@@ -157,7 +157,28 @@
 </header>
 
 {%endblock%}
+   <footer class="landing-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <a href="{%url 'home'%}">
+            <img src="{%static 'assets/img/logo-dark.svg'%}" alt="">
+          </a>
+
+        </div>
+        <div class="col-md-10 d-flex justify-content-end align-items-center">
+          <ul>
+            <li><a href="{%url 'faq'%}">FAQ</a></li>
+            <li><a href="{%url 'about'%}">ABOUT US</a></li>
+            <li><a href="{%url 'profile'%}">DASHBOARD</a></li>
+            <li><a href="#?">CONTACT US</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
 {%block scripts%}
+
   <script src="{%static 'assets/js/jquery-3.4.1.min.js'%}"></script>
   <script src="{%static 'assets/js/popper.min.js'%}"></script>
   <script src="{%static 'assets/js/bootstrap.min.js'%}"></script>

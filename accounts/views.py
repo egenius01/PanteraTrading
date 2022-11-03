@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView
-from django.views.generic import ListView
+from django.views.generic import ListView, TemplateView
 from django.contrib.auth.decorators import login_required
 from .models import Investment, FAQ
 from .models import CustomUser
@@ -26,6 +26,8 @@ class FAQView(ListView):
     model = FAQ
     template_name = 'faq.html'
 
+class AboutView(TemplateView):
+    template_name = 'about.html'
 
 class SignUpView(CreateView):
     form_class = CustomUserCreationForm
