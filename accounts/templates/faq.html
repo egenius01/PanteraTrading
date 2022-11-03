@@ -1,0 +1,121 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block content%}
+<header>
+  <!-- Intro settings -->
+  <style>
+    /* Default height for small devices */
+    #intro-example {
+      height: 400px;
+    }
+
+    /* Height for devices larger than 992px */
+    @media (min-width: 992px) {
+      #intro-example {
+        height: 600px;
+      }
+    }
+  </style>
+
+
+  <!-- Background image -->
+  <div
+    id="intro-example"
+    class="p-5 text-center bg-image"
+    style="background-image: url('https://triplecrown.co.in/img/slider-1.jpg');"
+  >
+    <div class="mask" style="background-color: rgba(0, 0, 0, 0.7);">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-white">
+          <h1 class="mb-3">FAQ</h1>
+          <h2 class="mb-4">Frequently Asked Questions</h2>
+          <h5>find Frequently Asked Questions below </h5>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Background image -->
+</header>
+
+{%for q in object_list%}
+<section class="m-5 p-5">
+<div class="list-group w-100">
+  <a href="#shortExampleAnswer1collapse" data-mdb-toggle="collapse" aria-expanded="false"
+    aria-controls="shortExampleAnswer1collapse" class="list-group-item list-group-item-action">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">{{q.question}}</h5>
+    </div>
+    <p class="mb-1">
+      {{q.answer|truncatechars:10}}    </p>
+    <small><u>Learn more</u></small>
+    <!-- Collapsed content -->
+    <div class="collapse mt-3" id="shortExampleAnswer1collapse">
+      {{q.answer}}
+    </div>
+  </a>
+</div>
+  {%endfor%}
+</section>
+
+
+  <div class="landing-number">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h2>$657B</h2>
+          <p>Quarterly volume traded</p>
+        </div>
+        <div class="col-md-4">
+          <h2>100+</h2>
+          <p>Countries supported
+          </p>
+        </div>
+        <div class="col-md-4">
+          <h2>56+M</h2>
+          <p>Verified users
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="landing-sub">
+    <div class="container">
+      <div class="row">
+        <div class="offset-md-1 col-md-10">
+          <div class="landing-sub-content">
+            <h2>Become part of a global community of people who have found their path to the crypto world with Pantera
+            </h2>
+            <a href="{%url 'signup'%}">Get Started</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="landing-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <a href="landing-page-light.html">
+            <img src="{%static 'assets/img/logo-dark.svg'%}" alt="">
+          </a>
+
+        </div>
+        <div class="col-md-10 d-flex justify-content-end align-items-center">
+<!--          <ul>-->
+<!--            <li><a href="exchange-light.html">Exchange</a></li>-->
+<!--            <li><a href="markets-light.html">Market</a></li>-->
+<!--            <li><a href="settings-profile-light.html">Profile</a></li>-->
+<!--            <li><a href="settings-wallet-light.html">Wallet</a></li>-->
+<!--            <li><a href="settings-light.html">Settings</a></li>-->
+<!--          </ul>-->
+        </div>
+      </div>
+    </div>
+  </footer>
+{%endblock%}

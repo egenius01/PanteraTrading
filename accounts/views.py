@@ -4,7 +4,7 @@ from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView
 from django.views.generic import ListView
 from django.contrib.auth.decorators import login_required
-from .models import Investment
+from .models import Investment, FAQ
 from .models import CustomUser
 
 from .forms import CustomUserCreationForm
@@ -21,6 +21,10 @@ def homepage(request, *args, **kwargs):
     print(request.session.get_expiry_date())
 
     return render(request, 'index.html', {})
+
+class FAQView(ListView):
+    model = FAQ
+    template_name = 'faq.html'
 
 
 class SignUpView(CreateView):
