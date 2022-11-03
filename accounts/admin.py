@@ -24,6 +24,7 @@ class InvestmentAdmin(UserAdmin):
 
 
 admin.site.register(CustomUser, CustomUserAdmin)
+
 admin.site.register(Investment)
 admin.site.register(UserInvestment)
 admin.site.register(Withdrawals)
