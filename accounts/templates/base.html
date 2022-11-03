@@ -12,15 +12,149 @@
   <link rel="stylesheet" href="{%static 'assets/css/style.css'%}">
   <link rel="stylesheet" href="{%static 'assets/css/ionicons.min.css'%}">
 
+  <!-- Font Awesome -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  rel="stylesheet"
+
+/>
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.css"
+  rel="stylesheet"
+/>
+
+    <style>
+      /* Carousel styling */
+      #introCarousel,
+      .carousel-inner,
+      .carousel-item,
+      .carousel-item.active {
+        height: 100vh;
+      }
+
+      .carousel-item:nth-child(1) {
+        background-image: url('https://triplecrown.co.in/img/slider-1.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+
+      .carousel-item:nth-child(2) {
+        background-image: url('https://wallpaperaccess.com/full/3734633.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+
+      .carousel-item:nth-child(3) {
+        background-image: url('https://www.fortunebuilders.com/wp-content/uploads/2015/07/real-estate-benefits.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+
+      /* Height for devices larger than 576px */
+      @media (min-width: 992px) {
+        #introCarousel {
+          margin-top: -58.59px;
+        }
+      }
+
+      .navbar .nav-link {
+        color: #fff !important;
+      }
+    </style>
   {%endblock%}
 
-</head>
+<header>
+    <style>
+      /* Carousel styling */
+      #introCarousel,
+      .carousel-inner,
+      .carousel-item,
+      .carousel-item.active {
+        height: 100vh;
+      }
 
-<body>
-{%block nav%}
-{%include 'header.html'%}
-{%endblock%}
+      .carousel-item:nth-child(1) {
+        background-image: url('https://triplecrown.co.in/img/slider-1.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+
+      .carousel-item:nth-child(2) {
+        background-image: url('https://wallpaperaccess.com/full/3734633.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+
+      .carousel-item:nth-child(3) {
+        background-image: url('https://www.fortunebuilders.com/wp-content/uploads/2015/07/real-estate-benefits.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+
+      /* Height for devices larger than 576px */
+      @media (min-width: 992px) {
+        #introCarousel {
+          margin-top: -58.59px;
+        }
+      }
+
+      .navbar .nav-link {
+        color: #fff !important;
+      }
+    </style>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light  d-none d-lg-block" style="z-index: 2000;">
+      <div class="container-fluid">
+        <!-- Navbar brand -->
+        <a class="navbar-brand  nav-link" target="_blank" href="{%url 'profile'%}"><img src="{%static 'assets/img/logo-dark.svg'%}" alt="Pantera Trading" style="width:50px; height:35px;">
+          <strong>PanteraTrade</strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"
+          aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarExample01">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" aria-current="page" href="#intro">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.youtube.com/channel/UC5CF7mLQZhvx8O5GODZAhdA" rel="nofollow"
+                target="_blank">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://mdbootstrap.com/docs/standard/" target="_blank">FAQ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://mdbootstrap.com/docs/standard/" target="_blank">Contact Us</a>
+            </li>
+          </ul>
+
+          <ul class="navbar-nav list-inline">
+            {%if user.isauthenticated%}
+            Hello, {{user.username}}
+            {%endif%}
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Navbar -->
 {%block content%}
+</header>
 
 {%endblock%}
 {%block scripts%}
@@ -31,6 +165,11 @@
   <script src="{%static 'assets/js/amcharts.min.js'%}"></script>
   <script src="{%static 'assets/js/jquery.mCustomScrollbar.js'%}"></script>
   <script src="{%static 'assets/js/custom.js'%}"></script>
+  <!-- MDB -->
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.js"
+></script>
 {%endblock%}
   <script>
     $('tbody, .market-news ul').mCustomScrollbar({

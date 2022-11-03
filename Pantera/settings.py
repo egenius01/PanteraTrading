@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'random string')
 DEBUG = True
 # DEBUG = os.environ.get('DEBUG', True)
 
-ALLOWED_HOSTS = ['web-production-a77e.up.railway.app']
+ALLOWED_HOSTS = ['web-production-a77e.up.railway.app','www.panteratradenetwork.com','panteratradenetwork.com','localhost']
 
 # Application definition
 

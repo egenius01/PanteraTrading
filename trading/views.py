@@ -11,10 +11,10 @@ def dashboard(request):
     profile = CustomUser.objects.get(username=request.user.username)
     withdrawal = Withdrawals.objects.filter(approved=True)
     with_num = [a for a in withdrawal if withdrawal]
-    print(f'{len(with_num)} jjhhjhb')
+    # print(f'{len(with_num)} jjhhjhb')
     current_balance = profile.current_balance
     invest_bal = [a.deposit for a in investment if a.approved]
-    print(invest_bal)
+    # print(invest_bal)
     total = 0
     for ele in range(0, len(invest_bal)):
         total = total + invest_bal[ele]
@@ -56,7 +56,7 @@ class WithdrawalRequestView(LoginRequiredMixin, CreateView):
 
     def get_context_data(self, **kwargs):
         kwargs['object_list'] = Withdrawals.objects.order_by('date_created')
-        print(kwargs['object_list'])
+        # print(kwargs['object_list'])
         return super(WithdrawalRequestView, self).get_context_data(**kwargs)
 
 @login_required

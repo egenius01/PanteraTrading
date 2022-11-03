@@ -1,6 +1,90 @@
 {%extends 'base.html'%}
 {%load static%}
 {%block content%}
+    <!-- Carousel wrapper -->
+    <div id="introCarousel" class="carousel slide carousel-fade shadow-2-strong" data-mdb-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-mdb-target="#introCarousel" data-mdb-slide-to="0" class="active"></li>
+        <li data-mdb-target="#introCarousel" data-mdb-slide-to="1"></li>
+        <li data-mdb-target="#introCarousel" data-mdb-slide-to="2"></li>
+      </ol>
+
+      <!-- Inner -->
+      <div class="carousel-inner">
+        <!-- Single item -->
+        <div class="carousel-item active">
+          <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+            <div class="d-flex justify-content-center align-items-center h-100">
+              <div class="text-white text-center">
+                <h1 class="mb-3">Pantera Trade Network</h1>
+                <h5 class="mb-4">The most trusted and secure trade broker</h5>
+                <a class="btn btn-outline-light btn-lg m-2 mt-5"
+                  href="{% url 'signup' %}" target="_blank" role="button">Get Started</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Single item -->
+        <div class="carousel-item">
+           <div class="mask" style="
+                background: linear-gradient(
+                  45deg,
+                  rgba(255, 0, 15, 0.5) 50%,
+                  rgba(171, 21, 15, 0.5) 100%
+                );
+              ">
+            <div class="d-flex justify-content-center align-items-center h-100">
+              <div class="text-white text-center">
+                <h1 class="mb-3"> Who We Are</h1>
+                <h5 class="mb-4 mx-5 px-5">
+                  Pantera trading network Limited is a private limited <br>
+              liability company Incorporated in the United Kingdom as a broker
+              that handles, simplifies and automates the technical,<br>Fragile and Decision-making Processes for Beginners and Experts
+                  alike in the CryptoCurrency and the Forex
+              market.
+                </h5>
+                <a class="btn btn-outline-light btn-lg m-2 mt-5"
+                  href="{% url 'signup' %}" target="_blank" role="button">Get Started</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Single item -->
+        <div class="carousel-item">
+          <div class="mask" style="
+                background: linear-gradient(
+                  45deg,
+                  rgba(29, 236, 197, 0.7) 80%,
+                  rgba(91, 14, 214, 0.7) 100%
+                );
+              ">
+            <div class="d-flex justify-content-center align-items-center h-100">
+              <div class="text-white text-center">
+                <h1>Let us take your investment game from 0 to 100</h1>
+                <a class="btn btn-outline-light btn-lg m-2 mt-5"
+                  href="{% url 'signup' %}" target="_blank" role="button">Get Started</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Inner -->
+
+      <!-- Controls -->
+      <a class="carousel-control-prev" href="#introCarousel" role="button" data-mdb-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#introCarousel" role="button" data-mdb-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    <!-- Carousel wrapper -->
+  </header>
 <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script src="https://s3.tradingview.com/external-embedding/embed-widget-tickers.js" async>
@@ -11,24 +95,6 @@
         </div>
 <div class="landing-hero">
 
-    <div class="container">
-      <div class="row">
-        <div class="offset-md-2 col-md-8 text-center">
-
-            <h2>Pantera, <small> The most trusted and secure trade broker.</small></h2>
-          <p>Pantera trading network Limited is a private limited
-              liability company Incorporated in the United Kingdom as a broker
-              that mediate on behalf of beginners and experts alike in Crypto and Forex
-              market. Why do you stress yourself trading when we can trade for you?
-              Lets be your broker and we promise you won’t break a sweat before you earn.</p>
-          <div class="float-center">
-              <a href="{%url 'signup'%}" class="btn btn-primary" type="button" >Get Started</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <div class="container-fluid no-fluid">
     <div class="row sm-gutters">
@@ -83,54 +149,30 @@
       </div>
     </div>
   </div>
-<div class="landing-feature landing-start">
+
+<!--<div>-->
     <div class="container">
       <div class="row">
-        <div class="col-md-12">
-          <h2>Get started in a few steps</h2>
+        <div class="col-md-12 d-flex justify-content-center align-items-center h-100">
+          <h2 class="my-5">Get started in a few steps</h2>
         </div>
-        <div class="col-md-4">
-          <div class="landing-feature-item">
-              <img src='{% static "assets/img/landing/user.svg"%}' alt="">
-            <span>1</span>
-            <h2 class="text-center">Choose a suitable Investment Plan</h2>
-            <p>Select any of the Investment Plans you wish to start with.
-                    You can always further Invest under any of the Plans
-                      from your account when you have signed up.</p>
-          </div>
-        </div>
+
 
         <div class="col-md-4">
           <div class="landing-feature-item">
-            <img src='{% static "assets/img/landing/trade.svg"%}' alt="">
-            <span>2</span>
-            <h2 class="text-center">Sign Up for an Investment Account</h2>
-            <p>Having selected an Investment Plan, choose how
-                  much you wish to invest, how you wish to fund it and
-                  preferred ROI model; then fill out a very simple form
-                  to sign up for an Investment Account.
+              <img src='{% static "assets/img/landing/managment.svg"%}' alt="">
+            <h5 class="card-title">Sign Up for an Investment Account</h5>
+            <p>Having completed the sign up process for an Investment Account, select an Investment Plan, Click Add Investment on your Dashboard,
+              choose how much you wish to invest, how you wish to fund it and
+                  preferred ROI model..
             </p>
           </div>
         </div>
 
         <div class="col-md-4">
           <div class="landing-feature-item">
-              <img src='{% static "assets/img/landing/bank.svg"%}' alt="">
-            <span>3</span>
-            <h2 class="text-center">Fund your New Investment</h2>
-            <p>Then, fund your Investment through any of the
-                  available mediums, mostly Digital Currencies (BTC,
-                  ETH, LTC, etc.) for ease of global payment when
-                  funding investments and when receiving your
-                  payouts.</p>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="landing-feature-item">
-              <img src='{% static "assets/img/landing/managment.svg"%}' alt="">
-            <span>5</span>
-            <h2 class="text-center">We Trade and Invest Strategically With your Funds.</h2>
+              <img src='{% static "assets/img/landing/trade.svg"%}' alt="">
+            <h5 class="card-title">Our Exoerts Systems ensures we Trade Strategically With your Funds.</h5>
             <p> Select any of the Investment Plans you wish to start with.
               You can always further Invest under any of the Plans from your account when you have signed up.
             </p>
@@ -139,19 +181,22 @@
 
         <div class="col-md-4">
           <div class="landing-feature-item">
-            <img src='{% static "assets/img/landing/trade.svg"%}' alt="">
-            <span>6</span>
-            <h2 class="text-center">You can Request Payout or Re-invest Your Returns</h2>
-            <p>Anytime, you can request your earned interests (ROI)
-                  for payout directly into your provided Account or
-                  Digital Wallet (for ease of global payment). You may
-                  also put them back at work by re-investment</p>
+            <img src='{% static "assets/img/landing/bank.svg"%}' alt="">
+            <h5 class="card-title">Request Withdrawal Whenever you seem fit</h5>
+            <p>
+              Having grown your funds to an amount, and you wish to withdraw your earnings, the whole balance, or you wish to reinvest the earning into
+              a better investment plan, all you have to do is select request withdrawal on your dashboard,
+              withdrawal amount directly into your provided Account or Digital Wallet (for ease of global payment).
+
+            </p>
           </div>
         </div>
+
 
       </div>
     </div>
   </div>
+
 
 
   <div class="landing-feature">
@@ -255,13 +300,13 @@
           </a>
         </div>
         <div class="col-md-10 d-flex justify-content-end align-items-center">
-          <ul>
-            <li><a href="exchange-light.html">Exchange</a></li>
-            <li><a href="markets-light.html">Market</a></li>
-            <li><a href="settings-profile-light.html">Profile</a></li>
-            <li><a href="settings-wallet-light.html">Wallet</a></li>
-            <li><a href="settings-light.html">Settings</a></li>
-          </ul>
+<!--          <ul>-->
+<!--            <li><a href="exchange-light.html">Exchange</a></li>-->
+<!--            <li><a href="markets-light.html">Market</a></li>-->
+<!--            <li><a href="settings-profile-light.html">Profile</a></li>-->
+<!--            <li><a href="settings-wallet-light.html">Wallet</a></li>-->
+<!--            <li><a href="settings-light.html">Settings</a></li>-->
+<!--          </ul>-->
         </div>
       </div>
     </div>

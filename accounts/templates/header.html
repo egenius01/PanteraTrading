@@ -1,147 +1,195 @@
-  {%load static%}
-<header class="light-bb sticky-top bg-light">
-    <nav class="navbar navbar-expand-lg ">
-      <a class="navbar-brand" href="{%url 'profile'%}"><img src="{%static 'assets/img/logo-dark.svg'%}" alt="Pantera Trading"></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#headerMenu"
-        aria-controls="headerMenu" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="icon ion-md-menu"></i>
-      </button>
+<!--  {%load static%}-->
 
-      <div class="collapse navbar-collapse" id="headerMenu">
-        <ul class="navbar-nav mr-auto">
+<!--   <header>-->
+<!--    <style>-->
+<!--      /* Carousel styling */-->
+<!--      #introCarousel,-->
+<!--      .carousel-inner,-->
+<!--      .carousel-item,-->
+<!--      .carousel-item.active {-->
+<!--        height: 100vh;-->
+<!--      }-->
 
-          <li class="nav-item dropdown">
-            <a href="{%url 'profile'%}">{{user.username|upper}} {%if user.is_authenticated%} Last Login: {{user.last_login}} {%endif%}</a>
-          </li>
+<!--      .carousel-item:nth-child(1) {-->
+<!--        background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg');-->
+<!--        background-repeat: no-repeat;-->
+<!--        background-size: cover;-->
+<!--        background-position: center center;-->
+<!--      }-->
 
-        </ul>
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item header-custom-icon">
-            <a class="nav-link" href="#" id="clickFullscreen">
-              <i class="icon ion-md-expand"></i>
-            </a>
-          </li>
-<!--          <li class="nav-item dropdown header-custom-icon">-->
-<!--            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"-->
-<!--              aria-expanded="false">-->
-<!--              <i class="icon ion-md-notifications"></i>-->
-<!--              <span class="circle-pulse"></span>-->
+<!--      .carousel-item:nth-child(2) {-->
+<!--        background-image: url('https://mdbootstrap.com/img/Photos/Others/images/77.jpg');-->
+<!--        background-repeat: no-repeat;-->
+<!--        background-size: cover;-->
+<!--        background-position: center center;-->
+<!--      }-->
+
+<!--      .carousel-item:nth-child(3) {-->
+<!--        background-image: url('https://mdbootstrap.com/img/Photos/Others/images/78.jpg');-->
+<!--        background-repeat: no-repeat;-->
+<!--        background-size: cover;-->
+<!--        background-position: center center;-->
+<!--      }-->
+
+<!--      /* Height for devices larger than 576px */-->
+<!--      @media (min-width: 992px) {-->
+<!--        #introCarousel {-->
+<!--          margin-top: -58.59px;-->
+<!--        }-->
+<!--      }-->
+
+<!--      .navbar .nav-link {-->
+<!--        color: #fff !important;-->
+<!--      }-->
+<!--    </style>-->
+<!--    </header>-->
+
+
+
+
+<!--&lt;!&ndash;<header class="light-bb sticky-top bg-light">&ndash;&gt;-->
+<!--&lt;!&ndash;    <nav class="navbar navbar-expand-lg ">&ndash;&gt;-->
+<!--      <a class="navbar-brand" href="{%url 'profile'%}"><img src="{%static 'assets/img/logo-dark.svg'%}" alt="Pantera Trading"></a>-->
+<!--&lt;!&ndash;      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#headerMenu"&ndash;&gt;-->
+<!--&lt;!&ndash;        aria-controls="headerMenu" aria-expanded="false" aria-label="Toggle navigation">&ndash;&gt;-->
+<!--&lt;!&ndash;        <i class="icon ion-md-menu"></i>&ndash;&gt;-->
+<!--&lt;!&ndash;      </button>&ndash;&gt;-->
+
+<!--&lt;!&ndash;      <div class="collapse navbar-collapse" id="headerMenu">&ndash;&gt;-->
+<!--&lt;!&ndash;        <ul class="navbar-nav mr-auto">&ndash;&gt;-->
+
+<!--&lt;!&ndash;          <li class="nav-item dropdown">&ndash;&gt;-->
+<!--&lt;!&ndash;            <a href="{%url 'profile'%}">{{user.username|upper}} {%if user.is_authenticated%} Last Login: {{user.last_login}} {%endif%}</a>&ndash;&gt;-->
+<!--&lt;!&ndash;          </li>&ndash;&gt;-->
+
+<!--&lt;!&ndash;        </ul>&ndash;&gt;-->
+<!--&lt;!&ndash;        <ul class="navbar-nav ml-auto">&ndash;&gt;-->
+<!--&lt;!&ndash;          <li class="nav-item header-custom-icon">&ndash;&gt;-->
+<!--&lt;!&ndash;            <a class="nav-link" href="#" id="clickFullscreen">&ndash;&gt;-->
+<!--&lt;!&ndash;              <i class="icon ion-md-expand"></i>&ndash;&gt;-->
+<!--&lt;!&ndash;            </a>&ndash;&gt;-->
+<!--&lt;!&ndash;          </li>&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;          <li class="nav-item dropdown header-custom-icon">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;              aria-expanded="false">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;              <i class="icon ion-md-notifications"></i>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;              <span class="circle-pulse"></span>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            </a>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            <div class="dropdown-menu">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;              <div class="dropdown-header d-flex align-items-center justify-content-between">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                <p class="mb-0 font-weight-medium">6 New Notifications</p>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                <a href="#!" class="text-muted">Clear all</a>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;              </div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;              <div class="dropdown-body">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                <a href="#!" class="dropdown-item">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                  <div class="icon">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                    <i class="icon ion-md-lock"></i>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                  </div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                  <div class="content">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                    <p>Account password change</p>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                    <p class="sub-text text-muted">5 sec ago</p>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                  </div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                </a>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                <a href="#!" class="dropdown-item">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                  <div class="icon">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                    <i class="icon ion-md-alert"></i>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                  </div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                  <div class="content">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                    <p>Solve the security issue</p>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                    <p class="sub-text text-muted">10 min ago</p>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                  </div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                </a>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                <a href="#!" class="dropdown-item">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                  <div class="icon">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                    <i class="icon ion-logo-android"></i>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                  </div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                  <div class="content">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                    <p>Download android app</p>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                    <p class="sub-text text-muted">1 hrs ago</p>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                  </div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                </a>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                <a href="#!" class="dropdown-item">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                  <div class="icon">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                    <i class="icon ion-logo-bitcoin"></i>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                  </div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                  <div class="content">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                    <p>Bitcoin price is high now</p>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                    <p class="sub-text text-muted">2 hrs ago</p>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                  </div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                </a>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                <a href="#!" class="dropdown-item">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                  <div class="icon">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                    <i class="icon ion-logo-usd"></i>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                  </div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                  <div class="content">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                    <p>Payment completed</p>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                    <p class="sub-text text-muted">4 hrs ago</p>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                  </div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                </a>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;              </div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;              <div class="dropdown-footer d-flex align-items-center justify-content-center">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                <a href="#!">View all</a>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;              </div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            </div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;          </li>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;          {%if user.is_authenticated%}&ndash;&gt;-->
+<!--&lt;!&ndash;          <li class="nav-item dropdown header-img-icon">&ndash;&gt;-->
+<!--&lt;!&ndash;            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"&ndash;&gt;-->
+<!--&lt;!&ndash;              aria-expanded="false">&ndash;&gt;-->
+<!--&lt;!&ndash;              <img src="{%static 'assets/img/avatar.svg'%}" alt="avatar">&ndash;&gt;-->
+<!--&lt;!&ndash;            </a>&ndash;&gt;-->
+<!--&lt;!&ndash;            <div class="dropdown-menu">&ndash;&gt;-->
+<!--&lt;!&ndash;              <div class="dropdown-header d-flex flex-column align-items-center">&ndash;&gt;-->
+<!--&lt;!&ndash;                <div class="figure mb-3">&ndash;&gt;-->
+<!--&lt;!&ndash;                  <img src="{%static 'assets/img/avatar.svg'%}" alt="">&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                <div class="info text-center">&ndash;&gt;-->
+<!--&lt;!&ndash;                  <p class="name font-weight-bold mb-0">{{user.username}}</p>&ndash;&gt;-->
+<!--&lt;!&ndash;                  <p class="email text-muted mb-3">{{user.email}}</p>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;              </div>&ndash;&gt;-->
+<!--&lt;!&ndash;              <div class="dropdown-body">&ndash;&gt;-->
+<!--&lt;!&ndash;                <ul class="profile-nav">&ndash;&gt;-->
+<!--&lt;!&ndash;                  <li class="nav-item">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <a href="{%url 'profile'%}" class="nav-link">&ndash;&gt;-->
+<!--&lt;!&ndash;                      <i class="icon ion-md-person"></i>&ndash;&gt;-->
+<!--&lt;!&ndash;                      <span>Profile</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </a>&ndash;&gt;-->
+<!--&lt;!&ndash;                  </li>&ndash;&gt;-->
+<!--&lt;!&ndash;                  <li class="nav-item" id="changeThemeLight">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <a href="#!" class="nav-link">&ndash;&gt;-->
+<!--&lt;!&ndash;                      <i class="icon ion-md-sunny"></i>&ndash;&gt;-->
+<!--&lt;!&ndash;                      <span>Theme</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </a>&ndash;&gt;-->
+<!--&lt;!&ndash;                  </li>&ndash;&gt;-->
+<!--&lt;!&ndash;                  <li class="nav-item">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <a href="{%url 'logout'%}" class="nav-link red">&ndash;&gt;-->
+<!--&lt;!&ndash;                      <i class="icon ion-md-power"></i>&ndash;&gt;-->
+<!--&lt;!&ndash;                      <span>Log Out</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </a>&ndash;&gt;-->
+<!--&lt;!&ndash;                  </li>&ndash;&gt;-->
+<!--&lt;!&ndash;                </ul>&ndash;&gt;-->
+<!--&lt;!&ndash;              </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;          </li>&ndash;&gt;-->
+<!--&lt;!&ndash;          {%else%}&ndash;&gt;-->
+<!--&lt;!&ndash;          <li class="nav-item dropdown header-img-icon">&ndash;&gt;-->
+<!--&lt;!&ndash;            <a class="nav-link dropdown-toggle" href="{%url 'login'%}">&ndash;&gt;-->
+<!--              <i class="icon ion-md-power"></i> Login-->
 <!--            </a>-->
-<!--            <div class="dropdown-menu">-->
-<!--              <div class="dropdown-header d-flex align-items-center justify-content-between">-->
-<!--                <p class="mb-0 font-weight-medium">6 New Notifications</p>-->
-<!--                <a href="#!" class="text-muted">Clear all</a>-->
-<!--              </div>-->
-<!--              <div class="dropdown-body">-->
-<!--                <a href="#!" class="dropdown-item">-->
-<!--                  <div class="icon">-->
-<!--                    <i class="icon ion-md-lock"></i>-->
-<!--                  </div>-->
-<!--                  <div class="content">-->
-<!--                    <p>Account password change</p>-->
-<!--                    <p class="sub-text text-muted">5 sec ago</p>-->
-<!--                  </div>-->
-<!--                </a>-->
-<!--                <a href="#!" class="dropdown-item">-->
-<!--                  <div class="icon">-->
-<!--                    <i class="icon ion-md-alert"></i>-->
-<!--                  </div>-->
-<!--                  <div class="content">-->
-<!--                    <p>Solve the security issue</p>-->
-<!--                    <p class="sub-text text-muted">10 min ago</p>-->
-<!--                  </div>-->
-<!--                </a>-->
-<!--                <a href="#!" class="dropdown-item">-->
-<!--                  <div class="icon">-->
-<!--                    <i class="icon ion-logo-android"></i>-->
-<!--                  </div>-->
-<!--                  <div class="content">-->
-<!--                    <p>Download android app</p>-->
-<!--                    <p class="sub-text text-muted">1 hrs ago</p>-->
-<!--                  </div>-->
-<!--                </a>-->
-<!--                <a href="#!" class="dropdown-item">-->
-<!--                  <div class="icon">-->
-<!--                    <i class="icon ion-logo-bitcoin"></i>-->
-<!--                  </div>-->
-<!--                  <div class="content">-->
-<!--                    <p>Bitcoin price is high now</p>-->
-<!--                    <p class="sub-text text-muted">2 hrs ago</p>-->
-<!--                  </div>-->
-<!--                </a>-->
-<!--                <a href="#!" class="dropdown-item">-->
-<!--                  <div class="icon">-->
-<!--                    <i class="icon ion-logo-usd"></i>-->
-<!--                  </div>-->
-<!--                  <div class="content">-->
-<!--                    <p>Payment completed</p>-->
-<!--                    <p class="sub-text text-muted">4 hrs ago</p>-->
-<!--                  </div>-->
-<!--                </a>-->
-<!--              </div>-->
-<!--              <div class="dropdown-footer d-flex align-items-center justify-content-center">-->
-<!--                <a href="#!">View all</a>-->
-<!--              </div>-->
-<!--            </div>-->
 <!--          </li>-->
-          {%if user.is_authenticated%}
-          <li class="nav-item dropdown header-img-icon">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-              aria-expanded="false">
-              <img src="{%static 'assets/img/avatar.svg'%}" alt="avatar">
-            </a>
-            <div class="dropdown-menu">
-              <div class="dropdown-header d-flex flex-column align-items-center">
-                <div class="figure mb-3">
-                  <img src="{%static 'assets/img/avatar.svg'%}" alt="">
-                </div>
-                <div class="info text-center">
-                  <p class="name font-weight-bold mb-0">{{user.username}}</p>
-                  <p class="email text-muted mb-3">{{user.email}}</p>
-                </div>
-              </div>
-              <div class="dropdown-body">
-                <ul class="profile-nav">
-                  <li class="nav-item">
-                    <a href="{%url 'profile'%}" class="nav-link">
-                      <i class="icon ion-md-person"></i>
-                      <span>Profile</span>
-                    </a>
-                  </li>
-                  <li class="nav-item" id="changeThemeLight">
-                    <a href="#!" class="nav-link">
-                      <i class="icon ion-md-sunny"></i>
-                      <span>Theme</span>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="{%url 'logout'%}" class="nav-link red">
-                      <i class="icon ion-md-power"></i>
-                      <span>Log Out</span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </li>
-          {%else%}
-          <li class="nav-item dropdown header-img-icon">
-            <a class="nav-link dropdown-toggle" href="{%url 'login'%}">
-              <i class="icon ion-md-power"></i> Login
-            </a>
-          </li>
-          <li class="nav-item dropdown header-img-icon">
-            <a class="nav-link dropdown-toggle" href="{%url 'signup'%}">
-              <i class="icon ion-md-power"></i> Create Account
-            </a>
-          </li>
-          {%endif%}
+<!--          <li class="nav-item dropdown header-img-icon">-->
+<!--            <a class="nav-link dropdown-toggle" href="{%url 'signup'%}">-->
+<!--              <i class="icon ion-md-power"></i> Create Account-->
+<!--            </a>-->
+<!--          </li>-->
+<!--          {%endif%}-->
 
-        </ul>
-      </div>
-    </nav>
+<!--        </ul>-->
+<!--      </div>-->
+<!--    </nav>-->
 
-   <!-- TradingView Widget BEGIN -->
+<!--   &lt;!&ndash; TradingView Widget BEGIN &ndash;&gt;-->
 
-        <!-- TradingView Widget END -->
-  </header>
+<!--        &lt;!&ndash; TradingView Widget END &ndash;&gt;-->
+<!--&lt;!&ndash;  </header>&ndash;&gt;-->
