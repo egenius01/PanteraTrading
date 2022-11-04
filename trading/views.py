@@ -42,7 +42,7 @@ class UserInvestmentsView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
     def get_context_data(self, **kwargs):
-        kwargs['object_list'] = UserInvestment.objects.filter(User=self.request.user)
+        kwargs['object_list'] = Investment.objects.order_by('id')
         return super(UserInvestmentsView, self).get_context_data(**kwargs)
 
 
@@ -77,6 +77,9 @@ def referral_view(request):
 
 class TrackInvestmentView(LoginRequiredMixin, ListView):
     model = UserInvestment
+    def get_context_data(self, **kwargs):
+        kwargs['object_list'] = UserInvestment.objects.filter(user=self.request.user)
+        return super(TrackInvestmentView, self).get_context_data(**kwargs)
 
 
 def market_data(request):
