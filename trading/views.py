@@ -42,7 +42,7 @@ class UserInvestmentsView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
     def get_context_data(self, **kwargs):
-        kwargs['object_list'] = Investment.objects.order_by('id')
+        kwargs['object_list'] = Investment.objects.filter(user=self.request.user)
         return super(UserInvestmentsView, self).get_context_data(**kwargs)
 
 
