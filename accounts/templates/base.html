@@ -177,7 +177,7 @@
 
     <!-- Navbar brand -->
       <a class="navbar-brand"  href="{%url 'home'%}"><img src="{%static 'assets/img/logo-dark.svg'%}" alt="Pantera Trading" style="width:50px; height:35px;">
-      <strong>PanteraTrade</strong>
+      <strong  style="color: #cd292a">Pantera</strong>
       </a>
     <!-- Toggle button -->
     <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -199,24 +199,23 @@
 
         {%else%}
         <li class="nav-item d-flex justify-content-end">
-          <a class="nav-link" href="{%url 'login'%}">Login</i></a>
+          <a class="nav-link" href="{%url 'login'%}"><i class="fas fa-sign-in-alt"  style="color: #cd292a"></i> Login</i></a>
         </li>
         {%endif%}
       </ul>
         <!-- Link -->
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item active">
-              <a class="nav-link" aria-current="page" href="#intro">Home</a>
+              <a class="nav-link" aria-current="page" href="#intro"><i class="fas fa-home"  style="color: #cd292a"></i> Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="{%url 'about'%}" rel="nofollow"
-                  >About</a>
+              <a class="nav-link " href="{%url 'about'%}" rel="nofollow"> <i class="fas fa-info-circle"  style="color: #cd292a"></i> About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{%url 'faq'%}"   >FAQ</a>
+              <a class="nav-link" href="{%url 'faq'%}"><i class="fas fa-question-circle"  style="color: #cd292a"></i> FAQ</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://mdbootstrap.com/docs/standard/"   >Contact Us</a>
+              <a class="nav-link" href="https://mdbootstrap.com/docs/standard/"><i class="fas fa-envelope"  style="color: #cd292a"></i> Contact Us</a>
             </li>
           </ul>
       </ul>
