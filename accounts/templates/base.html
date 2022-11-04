@@ -70,10 +70,7 @@
         color: #fff !important;
       }
     </style>
-  {%endblock%}
-</head>
-<header>
-    <style>
+  <style>
       /* Carousel styling */
       #introCarousel,
       .carousel-inner,
@@ -111,70 +108,169 @@
       }
 
       .navbar .nav-link {
-        color: #fff !important;
+        color: #000 !important;
+      }
+      .a:hover {
+        text-decoration-color: red !important;
+        transition: 0.2s;
       }
     </style>
+  {%endblock%}
+</head>
+<header>
+
+
+<!--  bt navbar-->
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light  d-none d-lg-block" style="z-index: 2000;">
-      <div class="container-fluid">
-        <!-- Navbar brand -->
-        <a class="navbar-brand " target="_blank" href="{%url 'home'%}"><img src="{%static 'assets/img/logo-dark.svg'%}" alt="Pantera Trading" style="width:50px; height:35px;">
-          <strong>PanteraTrade</strong>
-        </a>
-        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"
-          aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="fas fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarExample01">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+  <!-- Navbar -->
+<nav class="navbar navbar-expand-lg bg-light navbar-light ">
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+
+    <!-- Navbar brand -->
+      <a class="navbar-brand"  href="{%url 'home'%}"><img src="{%static 'assets/img/logo-dark.svg'%}" alt="Pantera Trading" style="width:50px; height:35px;">
+      <strong>PanteraTrade</strong>
+      </a>
+    <!-- Toggle button -->
+    <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <!-- Icons -->
+      <ul class="d-flex justify-content-end ">
+        {% if user.isauthenticated %}
+        <li class="nav-item me-3 me-lg-0">
+          <a class="nav-link" href="{%url 'profile'%}">Hello, {{user.username}}</i></a>
+        </li>
+        <li class="nav-item me-3 me-lg-0">
+          <a class="nav-link" href="{%url 'profile'%}">Dashboard</i></a>
+        </li>
+
+        {%else%}
+        <li class="nav-item d-flex justify-content-end">
+          <a class="nav-link" href="{%url 'login'%}">Login</i></a>
+          <a class="nav-link" href="{%url 'signup'%}">Sign Up</i></a>
+        </li>
+        {%endif%}
+      </ul>
+        <!-- Link -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item active">
               <a class="nav-link" aria-current="page" href="#intro">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{%url 'about'%}" rel="nofollow"
-                target="_blank">About</a>
+              <a class="nav-link " href="{%url 'about'%}" rel="nofollow"
+                  >About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{%url 'faq'%}" target="_blank">FAQ</a>
+              <a class="nav-link" href="{%url 'faq'%}"   >FAQ</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://mdbootstrap.com/docs/standard/" target="_blank">Contact Us</a>
+              <a class="nav-link" href="https://mdbootstrap.com/docs/standard/"   >Contact Us</a>
             </li>
           </ul>
+      </ul>
 
-          <ul class="navbar-nav list-inline">
-            {% if user.isauthenticated %}
-            Hello, {{user.username}}
-            {%endif%}
-          </ul>
-        </div>
-      </div>
-    </nav>
+
+
+    </div>
+  </div>
+</nav>
 
     <!-- Navbar -->
 {%block content%}
 </header>
 
 {%endblock%}
-   <footer class=" mt-5 landing-footer">
-    <div class="container d-flex justify-content-end align-items-center">
-      <div class="row">
-        <div class="col-md-2">
-          <a href="{%url 'home'%}">
-            <img src="{%static 'assets/img/logo-dark.svg'%}" alt="">
-          </a>
+<!--   <footer class="landing-footer">-->
+<!--<div class="landing-sub">-->
+<!--    <div class="container">-->
+<!--      <div class="row">-->
+<!--        <div class="offset-md-1 col-md-10 offset-sm-1 col-sm-10">-->
+<!--          <div class="landing-sub-content">-->
+<!--            <h2>Become part of a global community of people who have found their path to the crypto world with Pantera</h2>-->
+<!--                               <p> Pantera trading network Limited is a private limited <br>-->
+<!--              liability company Incorporated in the United Kingdom as a broker-->
+<!--              that handles, simplifies and automates the technical,<br>Fragile and Decision-making Processes for Beginners and Experts-->
+<!--                  alike in the CryptoCurrency and the Forex-->
+<!--              market.</p>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      <div class="">-->
+<!--      <ul>-->
+<!--        <li class="nav-link"><a href="{%url 'about'%}">ABOUT US</a></li>-->
+<!--        <li class="nav-link"><a href="{%url 'faq'%}">FAQ</a></li>-->
+<!--        <li class="nav-link"><a href="{%url 'profile'%}">DASHBOARD</a></li>-->
+<!--        <li class="nav-link"><a href="#?">CONTACT US</a></li>-->
+<!--      </ul>-->
+<!--    </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--          <a href="{%url 'home'%}">-->
+<!--            <img src="{%static 'assets/img/logo-dark.svg'%}" alt="">-->
+<!--          </a>-->
 
-          <ul>
-            <li class="col-md-3"><a href="{%url 'faq'%}">FAQ</a></li>
-            <li class="col-md-3"><a href="{%url 'about'%}">ABOUT US</a></li>
-            <li class="col-md-3"><a href="{%url 'profile'%}">DASHBOARD</a></li>
-            <li class="col-md-3"><a href="#?">CONTACT US</a></li>
+<!--      </div>-->
+<!--  </footer>-->
+
+<!-- Footer -->
+<footer class="landing-sub text-center text-white" style="background-color:#ff0000;">
+  <!-- Grid container -->
+  <div class="container p-4">
+
+
+
+    <!-- Section: Text -->
+    <section class="mb-5">
+      <div class="landing-sub-content">
+            <h2>Become part of a global community of people who have found their path to the crypto world with Pantera</h2>
+                               <p> Pantera trading network Limited is a private limited <br>
+              liability company Incorporated in the United Kingdom as a broker
+              that handles, simplifies and automates the technical,<br>Fragile and Decision-making Processes for Beginners and Experts
+                  alike in the CryptoCurrency and the Forex
+              market.</p>
+          </div>
+    </section>
+    <!-- Section: Text -->
+
+
+    <!-- Section: Links -->
+    <section class="mt-5">
+      <!--Grid row-->
+      <div class="row">
+        <!--Grid column-->
+        <div class="col-lg-12 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Links</h5>
+
+          <ul class="list-unstyled mb-0">
+            <li><a  class=" text-white" href="{%url 'about'%}">ABOUT US</a></li>
+        <li ><a class=" text-white" href="{%url 'faq'%}">FAQ</a></li>
+        <li ><a class=" text-white" href="{%url 'profile'%}">Blog</a></li>
+        <li><a class=" text-white" href="#?">CONTACT US</a></li>
           </ul>
         </div>
+        <!--Grid column-->
       </div>
-    </div>
-  </footer>
+      <!--Grid row-->
+    </section>
+    <!-- Section: Links -->
+
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+<!--  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">-->
+<!--    © 2020 Copyright:-->
+<!--    <a class="text-white" href="https://panteratradenetwork.com">PanteraTradeNetwork.com</a>-->
+<!--  </div>-->
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
 {%block scripts%}
 
   <script src="{%static 'assets/js/jquery-3.4.1.min.js'%}"></script>

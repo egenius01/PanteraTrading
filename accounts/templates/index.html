@@ -1,8 +1,10 @@
 {%extends 'base.html'%}
 {%load static%}
 {%block content%}
+
+<section>
     <!-- Carousel wrapper -->
-    <div id="introCarousel" class="carousel slide carousel-fade shadow-2-strong" data-mdb-ride="carousel">
+    <div id="introCarousel" class="mt-auto carousel slide carousel-fade shadow-2-strong" data-mdb-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
         <li data-mdb-target="#introCarousel" data-mdb-slide-to="0" class="active"></li>
@@ -19,8 +21,13 @@
               <div class="text-white text-center">
                 <h1 class="mb-3">Pantera Trade Network</h1>
                 <h5 class="mb-4">The most trusted and secure trade broker</h5>
+                {%if user.isauthenticated%}
                 <a class="btn btn-outline-light btn-lg m-2 mt-5"
-                  href="{% url 'signup' %}" target="_blank" role="button">Get Started</a>
+                  href="{% url 'profile' %}"   role="button">Dashboard</a>
+                {%else%}
+                <a class="btn btn-outline-light btn-lg m-2 mt-5"
+                  href="{% url 'signup' %}"   role="button">Get Started</a>
+                {%endif%}
               </div>
             </div>
           </div>
@@ -37,16 +44,14 @@
               ">
             <div class="d-flex justify-content-center align-items-center h-100">
               <div class="text-white text-center">
-                <h1 class="mb-3"> Who We Are</h1>
+                <h1 class="mb-3">Who We Are</h1>
                 <h5 class="mb-4 mx-5 px-5">
                   Pantera trading network Limited is a private limited <br>
               liability company Incorporated in the United Kingdom as a broker
-              that handles, simplifies and automates the technical,<br>Fragile and Decision-making Processes for Beginners and Experts
-                  alike in the CryptoCurrency and the Forex
-              market.
+              that handles, simplifies and automates investments
                 </h5>
                 <a class="btn btn-outline-light btn-lg m-2 mt-5"
-                  href="{% url 'signup' %}" target="_blank" role="button">Get Started</a>
+                  href="{% url 'signup' %}"   role="button">Get Started</a>
               </div>
             </div>
           </div>
@@ -65,7 +70,7 @@
               <div class="text-white text-center">
                 <h1>Let us take your investment game from 0 to 100</h1>
                 <a class="btn btn-outline-light btn-lg m-2 mt-5"
-                  href="{% url 'signup' %}" target="_blank" role="button">Get Started</a>
+                  href="{% url 'signup' %}"   role="button">Get Started</a>
               </div>
             </div>
           </div>
@@ -84,6 +89,7 @@
       </a>
     </div>
     <!-- Carousel wrapper -->
+  </section>
   </header>
 <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
@@ -159,6 +165,7 @@
 
 
         <div class="col-md-4">
+          <a class="ripple text-dark" href="#!" data-mdb-ripple-color="#eccf6c" data-mdb-ripple-duration="10000ms" data-mdb-ripple-centered="true" data-mdb-ripple-unbound="false" data-mdb-ripple-radius="1000" style="">
           <div class="landing-feature-item">
               <img src='{% static "assets/img/landing/managment.svg"%}' alt="">
             <h5 class="card-title">Sign Up for an Investment Account</h5>
@@ -167,29 +174,33 @@
                   preferred ROI model..
             </p>
           </div>
+            </a>
         </div>
 
         <div class="col-md-4">
-          <div class="landing-feature-item">
+        <a class="ripple text-dark" href="#!" data-mdb-ripple-color="#eccf6c" data-mdb-ripple-duration="10000ms" data-mdb-ripple-centered="true" data-mdb-ripple-unbound="false" data-mdb-ripple-radius="1000" style="">
+          <div class="landing-feature-item" >
               <img src='{% static "assets/img/landing/trade.svg"%}' alt="">
             <h5 class="card-title">Our Experts Systems ensures we Trade Strategically With your Funds.</h5>
             <p> Select any of the Investment Plans you wish to start with.
               You can always further Invest under any of the Plans from your account when you have signed up.
             </p>
           </div>
+        </a>
         </div>
 
         <div class="col-md-4">
-          <div class="landing-feature-item">
+          <a class="ripple text-dark" href="#!" data-mdb-ripple-color="#eccf6c" data-mdb-ripple-duration="10000ms" data-mdb-ripple-centered="true" data-mdb-ripple-unbound="false" data-mdb-ripple-radius="1000" style="">
+          <div class="landing-feature-item" >
             <img src='{% static "assets/img/landing/bank.svg"%}' alt="">
             <h5 class="card-title">Request Withdrawal Whenever you seem fit</h5>
             <p>
               Having grown your funds to an amount, and you wish to withdraw your earnings, the whole balance, or you wish to reinvest the earning into
               a better investment plan, all you have to do is select request withdrawal on your dashboard,
               withdrawal amount directly into your provided Account or Digital Wallet (for ease of global payment).
-
             </p>
           </div>
+          </a>
         </div>
 
 
@@ -275,18 +286,6 @@
 
 
 
-  <div class="landing-sub">
-    <div class="container">
-      <div class="row">
-        <div class="offset-md-1 col-md-10">
-          <div class="landing-sub-content">
-            <h2>Become part of a global community of people who have found their path to the crypto world with Pantera
-            </h2>
-            <a href="{%url 'signup'%}">Get Started</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+
 
 {%endblock%}
