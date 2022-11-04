@@ -68,6 +68,9 @@
 
       .navbar .nav-link {
         color: #fff !important;
+       a:hover {
+        color: red;
+      }
       }
     </style>
   <style>
@@ -119,10 +122,53 @@
 </head>
 <header>
 
-
-<!--  bt navbar-->
-
-    <!-- Navbar -->
+<!-- TradingView Widget BEGIN -->
+        <div class="mt-5 fixed-top tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js"
+            async>
+              {
+                "symbols": [
+                  {
+                    "description": "",
+                    "proName": "BINANCE:SOLUSDT"
+                  },
+                  {
+                    "description": "",
+                    "proName": "BINANCE:BTCUSDT"
+                  },
+                  {
+                    "description": "",
+                    "proName": "BINANCE:GRTUSDT"
+                  },
+                  {
+                    "description": "",
+                    "proName": "BINANCE:BNBUSDT"
+                  },
+                  {
+                    "description": "",
+                    "proName": "BINANCE:AXSUSDT"
+                  },
+                  {
+                    "description": "",
+                    "proName": "BITFINEX:BTCUSD"
+                  },
+                  {
+                    "description": "",
+                    "proName": "BINANCE:DOTUSDT"
+                  },
+                  {
+                    "description": "",
+                    "proName": "BINANCE:ICPUSDT"
+                  }
+                ],
+                  "showSymbolLogo": true,
+                    "displayMode": "compact",
+                      "locale": "en"
+              }
+            </script>
+        </div>
+        <!-- TradingView Widget END -->
   <!-- Navbar -->
 
 <nav class="navbar fixed-top navbar-expand-lg bg-light navbar-light ">
@@ -182,53 +228,7 @@
 
 </nav>
 
-        <!-- TradingView Widget BEGIN -->
-        <div class="mt-5 fixed-top tradingview-widget-container">
-          <div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js"
-            async>
-              {
-                "symbols": [
-                  {
-                    "description": "",
-                    "proName": "BINANCE:SOLUSDT"
-                  },
-                  {
-                    "description": "",
-                    "proName": "BINANCE:BTCUSDT"
-                  },
-                  {
-                    "description": "",
-                    "proName": "BINANCE:GRTUSDT"
-                  },
-                  {
-                    "description": "",
-                    "proName": "BINANCE:BNBUSDT"
-                  },
-                  {
-                    "description": "",
-                    "proName": "BINANCE:AXSUSDT"
-                  },
-                  {
-                    "description": "",
-                    "proName": "BITFINEX:BTCUSD"
-                  },
-                  {
-                    "description": "",
-                    "proName": "BINANCE:DOTUSDT"
-                  },
-                  {
-                    "description": "",
-                    "proName": "BINANCE:ICPUSDT"
-                  }
-                ],
-                  "showSymbolLogo": true,
-                    "displayMode": "compact",
-                      "locale": "en"
-              }
-            </script>
-        </div>
-        <!-- TradingView Widget END -->
+
 
     <!-- Navbar -->
 {%block content%}
