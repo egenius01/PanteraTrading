@@ -29,6 +29,9 @@ class FAQView(ListView):
 class AboutView(TemplateView):
     template_name = 'about.html'
 
+class BlogView(TemplateView):
+    template_name = 'blog.html'
+
 class SignUpView(CreateView):
     form_class = CustomUserCreationForm
     success_url = reverse_lazy("login")

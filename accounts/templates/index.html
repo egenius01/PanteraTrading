@@ -23,10 +23,12 @@
                 <h5 class="mb-4">The most trusted and secure trade broker</h5>
                 {%if user.isauthenticated%}
                 <a class="btn btn-outline-light btn-lg m-2 mt-5"
-                  href="{% url 'profile' %}"   role="button">Dashboard</a>
+                  href="{% url 'profile' %}"   role="button">Dashboard
+                </a>
                 {%else%}
                 <a class="btn btn-outline-light btn-lg m-2 mt-5"
-                  href="{% url 'signup' %}"   role="button">Get Started</a>
+                  href="{% url 'signup' %}"   role="button">Get Started
+                </a>
                 {%endif%}
               </div>
             </div>
@@ -100,16 +102,24 @@
           </script>
         </div>
 <!--<div>-->
-    <div class="container-fluid ">
+    <div class="container-fluid" style="
+    background: url('https://news.monitalks.io/_next/image?url=https%3A%2F%2Fs3.eu-west-2.amazonaws.com%2Fprod-monitalks-media%2Fpantera_capital_7f58823caf.webp&w=750&q=75') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+">
       <div class="row">
         <div class="col-md-12 d-flex justify-content-center align-items-center h-100">
-          <h2 class="my-5">Get started in a few steps</h2>
+          <h1 class="my-5 text-light">Get started in a few steps</h1>
         </div>
 
 
-        <div class="col-md-4 mb-4">
-          <a class="ripple text-dark" href="#!" data-mdb-ripple-color="#eccf6c" data-mdb-ripple-duration="10000ms" data-mdb-ripple-centered="true" data-mdb-ripple-unbound="false" data-mdb-ripple-radius="1000" style="">
-          <div class="landing-feature-item">
+        <div class="col-md-4 mb-4" >
+
+          <a class="ripple ripple shadow-1-strong rounded text-dark" href="#!" data-mdb-ripple-color="#eccf6c" data-mdb-ripple-duration="10000ms" data-mdb-ripple-centered="true" data-mdb-ripple-unbound="false" data-mdb-ripple-radius="1000" style="">
+
+          <div class="card p-5">
               <i class="fas mb-4 fa-user-plus fa-5x " style="color: #013ccd"></i>
             <h5 class="card-title">Sign Up for an Investment Account</h5>
             <p>Having completed the sign up process for an Investment Account, select an Investment Plan, Click Add Investment on your Dashboard,
@@ -122,7 +132,7 @@
 
         <div class="col-md-4 mb-4">
         <a class="ripple text-dark" href="#!" data-mdb-ripple-color="#eccf6c" data-mdb-ripple-duration="10000ms" data-mdb-ripple-centered="true" data-mdb-ripple-unbound="false" data-mdb-ripple-radius="1000" style="">
-          <div class="landing-feature-item" >
+          <div class="card p-5" >
             <i class="fas mb-4 fa-chart-line fa-5x " style="color: #013ccd"></i>
             <h5 class="card-title">Our Experts Systems ensures we Trade Strategically With your Funds.</h5>
             <p> Select any of the Investment Plans you wish to start with.
@@ -134,7 +144,7 @@
 
         <div class="col-md-4 mb-4">
           <a class="ripple text-dark" href="#!" data-mdb-ripple-color="#eccf6c" data-mdb-ripple-duration="10000ms" data-mdb-ripple-centered="true" data-mdb-ripple-unbound="false" data-mdb-ripple-radius="1000" style="">
-          <div class="landing-feature-item" >
+          <div class="card p-5" >
           <i class="fas mb-4 fa-hand-holding-usd fa-5x " style="color: #013ccd"></i>
             <h5 class="card-title">Request Withdrawal Whenever you seem fit</h5>
             <p>
@@ -159,8 +169,8 @@
           <h2>Here are a few reasons why <br> you should choose Pantera</h2>
         </div>
         <div class="col-md-3">
-          <div class="landing-feature-item">
             <a class="ripple text-dark" href="#!" data-mdb-ripple-color="#eccf6c" data-mdb-ripple-duration="10000ms" data-mdb-ripple-centered="true" data-mdb-ripple-unbound="false" data-mdb-ripple-radius="1000" style="">
+          <div class="card p-5">
             <i class="fas mb-4 fa-lock fa-5x " style="color: #013ccd"></i>
             <h3>SECURE STORAGE</h3>
             <p>
@@ -169,24 +179,24 @@
               Trade, every digital asset in our system is encrypted from end-
               to-end.
               </p>
-            </a>
           </div>
+            </a>
         </div>
         <div class="col-md-3 mt-2">
-          <div class="landing-feature-item">
          <a class="ripple text-dark" href="#!" data-mdb-ripple-color="#eccf6c" data-mdb-ripple-duration="10000ms" data-mdb-ripple-centered="true" data-mdb-ripple-unbound="false" data-mdb-ripple-radius="1000" style="">
+          <div class="card p-5">
             <i class="fas mb-4 fa-shield-alt fa-5x " style="color: #013ccd"></i>
             <h3>PROTECTED BY INSURANCE</h3>
             <p>
               Cryptocurrency stored on our servers is covered by our
               insurance policy. Your investments are indemnified.
               </p>
-         </a>
           </div>
+         </a>
         </div>
         <div class="col-md-3 mt-2">
       <a class="ripple text-dark" href="#!" data-mdb-ripple-color="#eccf6c" data-mdb-ripple-duration="10000ms" data-mdb-ripple-centered="true" data-mdb-ripple-unbound="false" data-mdb-ripple-radius="1000" style="">
-          <div class="landing-feature-item">
+          <div class="card p-5">
             <i class="fas mb-4 fa-globe fa-5x " style="color: #013ccd"></i>
             <h3>Global Market Access</h3>
             <p>
@@ -197,7 +207,7 @@
         </div>
         <div class="col-md-3 mt-2">
           <a class="ripple text-dark" href="#!" data-mdb-ripple-color="#eccf6c" data-mdb-ripple-duration="10000ms" data-mdb-ripple-centered="true" data-mdb-ripple-unbound="false" data-mdb-ripple-radius="1000" style="">
-          <div class="landing-feature-item">
+          <div class="card p-5">
             <i class="fas mb-4 fa-key fa-5x " style="color: #013ccd"></i>
             <h3>TRUE FINANCIAL FREEDOM</h3>
             <p>
@@ -213,22 +223,29 @@
     </div>
   </div>
 
-  <div class="landing-number">
+  <div class="landing-number" style="
+    background:
+    url('https://news.monitalks.io/_next/image?url=https%3A%2F%2Fs3.eu-west-2.amazonaws.com%2Fprod-monitalks-media%2Fpantera_capital_7f58823caf.webp&w=750&q=75') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+">
     <div class="container">
       <div class="row">
         <div class="col-md-4">
           <h2>$657B</h2>
-          <p>Quarterly volume traded</p>
+          <strong>Quarterly volume traded</strong>
         </div>
         <div class="col-md-4">
           <h2>100+</h2>
-          <p>Countries supported
-          </p>
+          <strong>Countries supported
+          </strong>
         </div>
         <div class="col-md-4">
-          <h2>56+M</h2>
-          <p>Verified users
-          </p>
+          <h2>56+ M</h2>
+          <strong>Verified users
+          </strong>
         </div>
       </div>
     </div>

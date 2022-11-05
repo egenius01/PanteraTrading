@@ -38,6 +38,17 @@
         height: 100vh;
       }
 
+      .gradient-custom {
+        /* fallback for old browsers */
+        background: #6a11cb;
+
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: -webkit-linear-gradient(to right, rgba(106,17,203,0.5), rgba(37,117,252,0.5));
+
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        background: linear-gradient(to right, rgba(106,17,203,0.5), rgba(37,117,252,0.5))
+      }
+
       .carousel-item:nth-child(1) {
         background-image: url('https://triplecrown.co.in/img/slider-1.jpg');
         background-repeat: no-repeat;
@@ -72,6 +83,13 @@
         color: red !important;
       }
       }
+      body {
+  background: #FFFDD0 no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
     </style>
   <style>
       /* Carousel styling */
@@ -215,7 +233,10 @@
               <a class="nav-link" href="{%url 'faq'%}"><i class="fas fa-question-circle"  style="color: #cd292a"></i> FAQ</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://mdbootstrap.com/docs/standard/"><i class="fas fa-envelope"  style="color: #cd292a"></i> Contact Us</a>
+              <a class="nav-link" href="{%url 'blog'%}"><i class="fas fa-envelope"  style="color: #cd292a"></i> BLOG</a>
+            </li>
+          <li class="nav-item">
+              <a class="nav-link" href="https://mdbootstrap.com/docs/standard/"><i class="fas fa-envelope"  style="color: #cd292a"></i> CONTACT US</a>
             </li>
           </ul>
       </ul>
@@ -234,38 +255,6 @@
 </header>
 
 {%endblock%}
-<!--   <footer class="landing-footer">-->
-<!--<div class="landing-sub">-->
-<!--    <div class="container">-->
-<!--      <div class="row">-->
-<!--        <div class="offset-md-1 col-md-10 offset-sm-1 col-sm-10">-->
-<!--          <div class="landing-sub-content">-->
-<!--            <h2>Become part of a global community of people who have found their path to the crypto world with Pantera</h2>-->
-<!--                               <p> Pantera trading network Limited is a private limited <br>-->
-<!--              liability company Incorporated in the United Kingdom as a broker-->
-<!--              that handles, simplifies and automates the technical,<br>Fragile and Decision-making Processes for Beginners and Experts-->
-<!--                  alike in the CryptoCurrency and the Forex-->
-<!--              market.</p>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      <div class="">-->
-<!--      <ul>-->
-<!--        <li class="nav-link"><a href="{%url 'about'%}">ABOUT US</a></li>-->
-<!--        <li class="nav-link"><a href="{%url 'faq'%}">FAQ</a></li>-->
-<!--        <li class="nav-link"><a href="{%url 'profile'%}">DASHBOARD</a></li>-->
-<!--        <li class="nav-link"><a href="#?">CONTACT US</a></li>-->
-<!--      </ul>-->
-<!--    </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--          <a href="{%url 'home'%}">-->
-<!--            <img src="{%static 'assets/img/logo-dark.svg'%}" alt="">-->
-<!--          </a>-->
-
-<!--      </div>-->
-<!--  </footer>-->
-
-<!-- Footer -->
 <footer class="landing-sub text-center text-white" style="background-color:#ff0000;">
   <!-- Grid container -->
   <div class="container p-4">
@@ -297,7 +286,7 @@
           <ul class="list-unstyled mb-0">
             <li><a  class=" text-white" href="{%url 'about'%}">ABOUT US</a></li>
         <li ><a class=" text-white" href="{%url 'faq'%}">FAQ</a></li>
-        <li ><a class=" text-white" href="{%url 'profile'%}">Blog</a></li>
+        <li ><a class=" text-white" href="{%url 'profile'%}">BLOG</a></li>
         <li><a class=" text-white" href="#?">CONTACT US</a></li>
           </ul>
         </div>
@@ -310,12 +299,6 @@
   </div>
   <!-- Grid container -->
 
-  <!-- Copyright -->
-<!--  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">-->
-<!--    © 2020 Copyright:-->
-<!--    <a class="text-white" href="https://panteratradenetwork.com">PanteraTradeNetwork.com</a>-->
-<!--  </div>-->
-  <!-- Copyright -->
 
 </footer>
 <!-- Footer -->

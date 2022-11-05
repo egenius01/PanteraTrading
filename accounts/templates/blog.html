@@ -1,0 +1,64 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block content%}
+<header>
+  <!-- Intro settings -->
+  <style>
+    /* Default height for small devices */
+    #intro-example {
+      height: 400px;
+    }
+
+    /* Height for devices larger than 992px */
+    @media (min-width: 992px) {
+      #intro-example {
+        height: 600px;
+      }
+    }
+  </style>
+
+
+  <!-- Background image -->
+  <div
+    id="intro-example"
+    class="p-5 text-center bg-image"
+    style="background-image: url('https://triplecrown.co.in/img/slider-1.jpg');"
+  >
+    <div class="mask" style="background-color: rgba(0, 0, 0, 0.7);">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-white">
+          <h1 class="mb-3">Blog</h1>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Background image -->
+</header>
+<section>
+  <rssapp-wall id="tW7JWEGATkLAxoaR"></rssapp-wall><script src="https://widget.rss.app/v1/wall.js" type="text/javascript" async></script>
+</section>
+
+  <div class="landing-number">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h2>$657B</h2>
+          <p>Quarterly volume traded</p>
+        </div>
+        <div class="col-md-4">
+          <h2>100+</h2>
+          <p>Countries supported
+          </p>
+        </div>
+        <div class="col-md-4">
+          <h2>56+M</h2>
+          <p>Verified users
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{%endblock%}
