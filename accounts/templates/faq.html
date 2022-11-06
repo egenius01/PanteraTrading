@@ -43,7 +43,7 @@
 {%for q in object_list%}
 <section class="m-2">
 <div class="list-group w-100">
-  <a href="#shortExampleAnswer1collapse" data-mdb-toggle="collapse" aria-expanded="false"
+  <a href="#shortExampleAnswer1collapse{{q.id}}" data-mdb-toggle="collapse" aria-expanded="false"
     aria-controls="shortExampleAnswer1collapse" class="list-group-item list-group-item-action">
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1">{{q.question}}</h5>
@@ -52,7 +52,7 @@
       {{q.answer| truncatechars:10}}    </p>
     <small><u>Learn more</u></small>
     <!-- Collapsed content -->
-    <div class="collapse mt-3" id="shortExampleAnswer1collapse">
+    <div class="collapse mt-3" id="shortExampleAnswer1collapse{{q.id}}">
       {{q.answer}}
     </div>
   </a>
