@@ -151,3 +151,5 @@ DATABASES['default'].update(db_from_env)
 # Simplified static file serving.
 # https://pypi.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+DEFAULT_FROM_EMAIL = "support@panteratrade.com"
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"

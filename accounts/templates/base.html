@@ -206,7 +206,7 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <!-- Icons -->
       <ul class="d-flex justify-content-end ">
-        {% if user.isauthenticated %}
+        {% if user.is_authenticated %}
         <li class="nav-item me-3 me-lg-0">
           <a class="nav-link" href="{%url 'profile'%}">Hello, {{user.username}}</i></a>
         </li>
